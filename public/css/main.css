@@ -1,16 +1,16 @@
 .btn-thread{
-    width: 100%;
-    /*position: absolute;*/
+    /*width: 100%;*/
     bottom: 15px;
 }
 .main-content-heading{
     font-weight: bold;
-    /*margin-top: 20px;*/
+    margin-top: 20px;
 }
 
 .content-warp{
     padding-left: 20px;
 }
+
 
 .btn-edit a{
     font-size: 10px;

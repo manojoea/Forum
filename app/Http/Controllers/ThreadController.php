@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class ThreadController extends Controller
 {
+    function __construct()
+    {
+        return $this->middleware('auth')->except('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +51,8 @@ class ThreadController extends Controller
         ]);
 
         // Store
-        Thread::create($request->all());
+        auth()->user()->threads()->create($request->all());
+//        Thread::create($request->all());
 
         // Redirect
         session()->flash('msg', 'Thread Created');
@@ -84,6 +90,10 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
+        // Authorize
+        if (auth()->user()->id !== $thread->user_id){
+            abort(401,'Unauthorized');
+        }
         // Validate
         $this->validate($request, [
             'subject' => 'required|min:10',
@@ -107,6 +117,12 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
+        // Authorize
+        if (auth()->user()->id !== $thread->user_id){
+            abort(401,'Unauthorized');
+        }
+
+        // Delete Thread
         $thread->delete();
         session()->flash('msg', 'Thread Deleted');
         return redirect()->route('threads.index');

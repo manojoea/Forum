@@ -12,39 +12,14 @@
 <body>
         @include('layouts.partials.navbar')
         @yield('banner')
-
+            @yield('button')
               <div class="container">
                   <div class="row mt-3">
-                          <div class="col-md-3"><h4>Category</h4></div>
-                          <div class="col-md-9">
-                              <div class="row ">
-                                  <div class="col-md-9">
-                                      <h4 class="main-content-heading">@yield('heading')</h4>
-                                  </div>
-                                  <div class="col-md-3">
-                                      <a href="{{route('threads.create')}}" class="btn btn-success btn-thread">Create Thread</a>
-                                  </div>
-                              </div>
-                          </div>
-                  </div>
-                  <div class="row mt-3">
-                      <div class="col-md-3">
-                          <ul class="list-group">
-                              <a href="{{route('threads.index')}}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                  All Threads
-                                  <span class="badge badge-primary badge-pill">14</span>
-                              </a>
-                              <a class="list-group-item d-flex justify-content-between align-items-center">
-                                  Dapibus ac facilisis in
-                                  <span class="badge badge-primary badge-pill">2</span>
-                              </a>
-                              <a class="list-group-item d-flex justify-content-between align-items-center">
-                                  Morbi leo risus
-                                  <span class="badge badge-primary badge-pill">1</span>
-                              </a>
-                          </ul>
-                      </div>
+                      @section('category')
+                      @include('layouts.partials.category')
+                      @show
                       <div class="col-md-9">
+                          <div class="row content-heading"><h4>Threads</h4></div>
                           <div class="content-warp well">
                               @yield('content')
                           </div>
