@@ -17,9 +17,15 @@
             </div>
             <div class="form-group">
                 <label for="thread">Thread</label>
-                <textarea class="form-control {{$errors->has('thread') ? 'is-invalid':''}}" id="thread" name="thread" value="{{old('thread')}}" placeholder="Thread"></textarea>
+                <textarea class="form-control {{$errors->has('thread') ? 'is-invalid':''}}" id="thread" name="thread" placeholder="Thread">{{old('thread')}}</textarea>
             </div>
+{{--            <div class="form-group">--}}
+{{--                {!! NoCaptcha::display(['data-theme' => 'dark']) !!}--}}
+{{--            </div>--}}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+<script>
+
+</script>
 @endsection

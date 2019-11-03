@@ -22,4 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/threads', 'ThreadController');
 
+Route::resource('comments', 'CommentController',['only'=>['update', 'destroy']]);
+
+Route::post('comments/create/{thread}', 'CommentController@addThreadComment')->name('addThreadComment.store');
+
+Route::post('reply/create/{comment}', 'CommentController@addReplyComment')->name('addReplyComment.store');
+
 

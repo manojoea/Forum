@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Thread;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Anhskohbo\NoCaptcha\NoCaptcha;
 
 class ThreadController extends Controller
 {
@@ -45,9 +45,10 @@ class ThreadController extends Controller
     {
         // Validate
         $this->validate($request, [
-            'subject' => 'required|min:10',
+            'subject' => 'required|min:4',
             'type' => 'required',
-            'thread' => 'required|min:20'
+            'thread' => 'required|min:10',
+//            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         // Store

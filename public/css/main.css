@@ -11,30 +11,22 @@
     padding-left: 20px;
 }
 
-
-.btn-edit a{
-    font-size: 10px;
-    padding: 10px;
+.del-btn{
     border-radius: 20px;
-    background: #3f9ae5;
-    color: #fff;
-    text-decoration: none;
-    float: left;
-    margin-right: 15px;
+    font-size: 12px;
+    width: 70px;
+
 }
-.btn-edit i{
+.del-btn i{
+    margin-right: 3px;
+}
+.edit-btn{
+    font-size: 12px;
+    border-radius: 20px;
+    width: 70px;
+    float: left;
     margin-right: 5px;
 }
-
-.btn-delete{
-    font-size: 10px;
-    padding: 10px;
-    border:none;
-    border-radius: 20px;
-    background: #e3342f;
-    color: #fff;
-    text-decoration: none;
-    float: left;
-    margin-right: 15px;
+.edit-btn i{
+    margin-right: 3px;
 }
-
